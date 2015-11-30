@@ -1,13 +1,14 @@
-# Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux
+#Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux
+
 ##Boot Intel Edison board with the Root Filesystem on an external storage
+
 
 
 Before following any of these steps, make sure you have booted ubilinux or debian os 
 (from [Emutexlabs](http://www.emutexlabs.com/)) on Intel Edison.
 
-
-
 ###Prepare External Storage (MicroSD Card)
+
 
 1. You need to have a SD card formatted with ext4 file system to store the root file system
 2. Download and unpack Debian image from emutexlabs website
