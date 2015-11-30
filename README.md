@@ -3,7 +3,7 @@
 
 
 Before following any of these steps, make sure you have booted ubilinux or debian os 
-(from Emutexlabs) on Intel Edison.
+(from [Emutexlabs](http://www.emutexlabs.com/)) on Intel Edison.
 
 
 
