@@ -19,3 +19,5 @@ Before following any of these steps, make sure you have booted ubilinux or debia
         cp -a Rootfs/* media/saru/eb361b92-c285-44a6-9f32-da393c879487
         sync
 4. Eject the SD Card and now it is ready to boot
+
+      ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s1.png?raw=true)
