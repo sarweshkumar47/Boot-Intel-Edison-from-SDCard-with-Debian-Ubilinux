@@ -102,11 +102,11 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
 
 * If you want to switch to eMMC just occasionally, during the boot, on the serial console, when it prompts to press a key to stop booting, press any key and then run the below command in the U-Boot command prompt that appears:
 
-	> run do_boot_emmc
+        > run do_boot_emmc
 
 * To boot from SD card by running the below command in the U-Boot command prompt:
 
-	> run do_boot_sdcard
+        > run do_boot_sdcard
 
 	
 ## References: 
