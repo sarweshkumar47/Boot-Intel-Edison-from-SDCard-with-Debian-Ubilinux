@@ -1,13 +1,13 @@
-#Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux
+# Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux
 
-##Boot Intel Edison board with the Root Filesystem on an external storage
+## Boot Intel Edison board with the Root Filesystem on an external storage
 
 
 
 Before following any of these steps, make sure you have booted ubilinux or debian os 
 (from [Emutexlabs](http://www.emutexlabs.com/)) on Intel Edison.
 
-###Prepare External Storage (MicroSD Card)
+## Prepare External Storage (MicroSD Card)
 
 
 1. You need to have a SD card formatted with ext4 file system to store the root file system
@@ -24,7 +24,7 @@ Before following any of these steps, make sure you have booted ubilinux or debia
 4. Eject the SD Card and now it is ready to boot
 
 
-###Find out the SD card device name
+## Find out the SD card device name
 
 1.  On a running Edison board, plug your formatted SD card and get the device name.
 
@@ -35,7 +35,7 @@ Before following any of these steps, make sure you have booted ubilinux or debia
 2.  Here, the SD card device is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1"
  
 
-###Boot the board using SD card
+## Boot the board using SD card
 
 Debian system on Edison, does not mount the microsd card automatically. To mount sdcard at boot, modify the /etc/fstab system file in edison.
 
@@ -65,12 +65,12 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
 
 
 
-####Note:  
+## Note:  
 
-To modify U-Boot env variables, u-boot and u-boot-tools packages are available in debian repository. The tools            fw_printenv/fw_setenv in the u-boot source tree normally work with MTD partitions but they don’t support MMC.
+* To modify U-Boot env variables, u-boot and u-boot-tools packages are available in debian repository. The tools           fw_printenv/fw_setenv in the u-boot source tree normally work with MTD partitions but they don’t support MMC.
 
 
-To modify u-boot env variables ,during the boot, on the serial console, when it prompts to press a key to stop    booting, press any key and then run the following commands in the U-Boot command prompt.
+* To modify u-boot env variables ,during the boot, on the serial console, when it prompts to press a key to stop    booting, press any key and then run the following commands in the U-Boot command prompt.
    
   ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s5.png)
   
@@ -98,9 +98,9 @@ To modify u-boot env variables ,during the boot, on the serial console, when it 
 ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s7.png)
 
 
-Note: 
+## Note: 
 
-If you want to switch to eMMC just occasionally, during the boot, on the serial console, when it prompts to press a key to stop booting, press any key and then run the below command in the U-Boot command prompt that appears:
+* If you want to switch to eMMC just occasionally, during the boot, on the serial console, when it prompts to press a key to stop booting, press any key and then run the below command in the U-Boot command prompt that appears:
 
 	> run do_boot_emmc
 
@@ -109,9 +109,8 @@ To boot from SD card by running the below command in the U-Boot command prompt:
 	> run do_boot_sdcard
 
 	
-###References: 
+## References: 
 
- 1. [https://communities.intel.com/thread/61048](https://communities.intel.com/thread/61048)
+ * [https://communities.intel.com/thread/61048](https://communities.intel.com/thread/61048)
 
- 2. [http://www.denx.de/wiki/view/DULG/UBootCmdGroupEnvironment](http://www.denx.de/wiki/view/DULG/UBootCmdGroupEnvironment)
-	
+ * [http://www.denx.de/wiki/view/DULG/UBootCmdGroupEnvironment](http://www.denx.de/wiki/view/DULG/UBootCmdGroupEnvironment)
