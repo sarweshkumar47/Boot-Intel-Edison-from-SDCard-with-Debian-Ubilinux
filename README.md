@@ -72,7 +72,10 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
 
 * To modify u-boot env variables ,during the boot, on the serial console, when it prompts to press a key to stop    booting, press any key and then run the following commands in the U-Boot command prompt.
    
+
+
   ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s5.png)
+  
   
   
       > setenv mmc-bootargs 'setenv bootargs root=${myrootfs} rootdelay=3 rootfstype=ext4 ${bootargs_console} ${bootargs_debug} systemd.unit=${bootargs_target}.target hardware_id=${hardware_id} g_multi.iSerialNumber=${serial#} g_multi.dev_addr=${usb0addr}'
