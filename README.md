@@ -20,4 +20,12 @@ Before following any of these steps, make sure you have booted ubilinux or debia
         sync
 4. Eject the SD Card and now it is ready to boot
 
-      ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s1.png?raw=true)
+###Find out the SD card device name
+1.  On a running Edison board, plug your formatted SD card and get the device name.
+
+        dmesg | tail -n 10
+        
+  ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s1.png?raw=true)
+  
+2.  Here, the SD card device is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1"
+
