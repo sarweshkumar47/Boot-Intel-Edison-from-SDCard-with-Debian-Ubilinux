@@ -60,10 +60,24 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
 
 ####Note:  
 
-   To modify U-Boot env variables, u-boot and u-boot-tools packages are available in debian repository. The tools            fw_printenv/fw_setenv in the u-boot source tree normally work with MTD partitions but they don’t support MMC.
+To modify U-Boot env variables, u-boot and u-boot-tools packages are available in debian repository. The tools            fw_printenv/fw_setenv in the u-boot source tree normally work with MTD partitions but they don’t support MMC.
 
 
-   To modify u-boot env variables ,during the boot, on the serial console, when it prompts to press a key to stop    booting, press any key and then run the following commands in the U-Boot command prompt.
+To modify u-boot env variables ,during the boot, on the serial console, when it prompts to press a key to stop    booting, press any key and then run the following commands in the U-Boot command prompt.
    
   ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s5.png)
+  
+  	> setenv mmc-bootargs 'setenv bootargs root=${myrootfs} rootdelay=3 rootfstype=ext4 ${bootargs_console} ${bootargs_debug} systemd.unit=${bootargs_target}.target hardware_id=${hardware_id} g_multi.iSerialNumber=${serial#} g_multi.dev_addr=${usb0addr}'
+
+	> setenv myrootfs_sdcard /dev/mmcblk1p1
+
+	> setenv myrootfs_emmc PARTUUID=012b3303-34ac-284d-99b4-34e03a2335f4
+
+	> setenv do_boot_emmc 'setenv myrootfs ${myrootfs_emmc}; run do_boot'
+
+	> setenv do_boot_sdcard 'setenv myrootfs ${myrootfs_sdcard}; run do_boot'
+
+	> saveenv
+
+	> run do _boot_sdcard
 
