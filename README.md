@@ -28,4 +28,42 @@ Before following any of these steps, make sure you have booted ubilinux or debia
   ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s1.png?raw=true)
   
 2.  Here, the SD card device is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1"
+ 
+###Boot the board using SD card
+
+Debian system on Edison, does not mount the microsd card automatically. To mount sdcard at boot, modify the /etc/fstab system file in edison.
+
+1. Find the UUID for the sd card
+
+         blkid
+         
+      ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s2.png?raw=true)
+      
+2. add an entry for the partition to automount it at startup. Add file system, mount point, type, options, dump and pass information of sdcard partition to fstab file and save it. Example, the format looks like below,
+
+   #####/dev/sdcX      /media/sdcard    ext4    defaults    0     0
+           
+         nano /etc/fstab
+         #Add an entry for the partition
+         UUID=eb361b92-c285-44a6-9f32-da393c879487    /media/sdcard    ext4    defaults    0 0
+
+      ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s3.png?raw=true)
+      
+         mkdir -p /media/sdcard/
+         reboot
+   #####After reboot, debian os automatically mounts the sdcard.
+   
+   ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s4.png?raw=true)
+   
+    To boot using the external device, you need to modify the U-Boot environment variable named "mmc-bootargs" with kernel boot arguments. We cannot modify U-Boot environment variables from edison linux console in debian os. It is possible only in U-Boot command prompt.
+
+
+####Note:  
+
+   To modify U-Boot env variables, u-boot and u-boot-tools packages are available in debian repository. The tools            fw_printenv/fw_setenv in the u-boot source tree normally work with MTD partitions but they don’t support MMC.
+
+
+   To modify u-boot env variables ,during the boot, on the serial console, when it prompts to press a key to stop    booting, press any key and then run the following commands in the U-Boot command prompt.
+   
+  ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s5.png)
 
