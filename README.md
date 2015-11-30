@@ -81,3 +81,23 @@ To modify u-boot env variables ,during the boot, on the serial console, when it 
 
 	> run do _boot_sdcard
 
+![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s6.png)
+
+####After boot, verify that you are using rootfs stored on your external device.
+![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s7.png)
+
+Note: 
+If you want to switch to eMMC just occasionally, during the boot, on the serial console, when it prompts to press a key to stop booting, press any key and then run the below command in the U-Boot command prompt that appears:
+
+	> run do_boot_emmc
+
+To boot from SD card by running the below command in the U-Boot command prompt:
+
+	> run do_boot_sdcard
+	
+###References: 
+
+ 1. [https://communities.intel.com/thread/61048](https://communities.intel.com/thread/61048)
+
+ 2. [http://www.denx.de/wiki/view/DULG/UBootCmdGroupEnvironment](http://www.denx.de/wiki/view/DULG/UBootCmdGroupEnvironment)
+	
