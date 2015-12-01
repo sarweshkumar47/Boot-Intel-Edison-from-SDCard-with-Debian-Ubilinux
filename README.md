@@ -112,7 +112,7 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
         > run do_boot_sdcard
 
 	
-## References: 
+## References 
 
  * [https://communities.intel.com/thread/61048](https://communities.intel.com/thread/61048)
 
