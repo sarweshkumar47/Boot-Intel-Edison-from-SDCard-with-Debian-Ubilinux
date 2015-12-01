@@ -94,14 +94,16 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
 
       > run do _boot_sdcard
 
-
-![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s6.png)
+<p align="center">
+  <img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s6.png" alt="Mountain View" style="width:304px;height:228px;">
+</p>
 
 
 ####After boot, verify that you are using rootfs stored on your external device.
 
-![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s7.png)
-
+<p align="center">
+  <img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s7.png" alt="Mountain View" style="width:304px;height:228px;">
+</p>
 
 ## Note: 
 
