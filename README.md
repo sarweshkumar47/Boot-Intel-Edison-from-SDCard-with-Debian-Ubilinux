@@ -34,11 +34,11 @@ Before following any of these steps, make sure you have booted **_ubilinux or de
         
   
 <p align="center">
-<img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s1.png" alt="sdcard" style="width:304px;height:228px;">
+<img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s1.png" alt="sdcard";>
 </p>
   
   
-2.  Here, the SD card device is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1"
+Here, the SD card device is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1"
  
 
 ## Boot the board using SD card
@@ -62,11 +62,17 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
          #Add an entry for the partition
          UUID=eb361b92-c285-44a6-9f32-da393c879487    /media/sdcard    ext4    defaults    0 0
 
-      ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s3.png?raw=true)
+
+<p align="center">
+<img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s3.png" alt="blkid" style="width:304px;height:228px;">
+</p>
+
       
          mkdir -p /media/sdcard/
          reboot
-   #####After reboot, debian os automatically mounts the sdcard.
+    
+    
+ After reboot, debian os automatically mounts the sdcard.
    
 
 <p align="center">
@@ -86,10 +92,11 @@ To boot using the external device, you need to modify the U-Boot environment var
 * To modify u-boot env variables ,during the boot, on the serial console, when it prompts to press a key to stop    booting, press any key and then run the following commands in the U-Boot command prompt.
    
 
-
-  ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s5.png)
+<p align="center">
+<img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s5.png" alt="Mountain View" style="width:304px;height:228px;">
+</p>
   
-  
+  Run the following commands in boot command prompt
   
       > setenv mmc-bootargs 'setenv bootargs root=${myrootfs} rootdelay=3 rootfstype=ext4 ${bootargs_console} ${bootargs_debug} systemd.unit=${bootargs_target}.target hardware_id=${hardware_id} g_multi.iSerialNumber=${serial#} g_multi.dev_addr=${usb0addr}'
 
