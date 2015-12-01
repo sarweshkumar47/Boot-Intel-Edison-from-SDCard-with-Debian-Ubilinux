@@ -15,12 +15,14 @@ Before following any of these steps, make sure you have booted **_ubilinux or de
 3. In the unpacked directory (with the "flashall.sh" script) run the following commands to
    prepare the SD card. These commands mount the edison-image-edison.ext4 rootfs image and 
    copy the contents onto the SD card
-  
+
+  	
         sudo su
         mkdir Rootfs
         mount ./edison-image-edison.ext4 Rootfs
         cp -a Rootfs/* media/saru/eb361b92-c285-44a6-9f32-da393c879487
         sync
+  	
 4. Eject the SD Card and now it is ready to boot
 
 
