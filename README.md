@@ -32,7 +32,11 @@ Before following any of these steps, make sure you have booted **_ubilinux or de
 
         dmesg | tail -n 10
         
-  ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s1.png?raw=true)
+  
+<p align="center">
+<img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s1.png" alt="sdcard" style="width:304px;height:228px;">
+</p>
+  
   
 2.  Here, the SD card device is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1"
  
@@ -45,7 +49,10 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
 
          blkid
          
-      ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s2.png?raw=true)
+   
+<p align="center">
+<img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s2.png" alt="blkid" style="width:304px;height:228px;">
+</p>
       
 2. add an entry for the partition to automount it at startup. Add file system, mount point, type, options, dump and pass information of sdcard partition to fstab file and save it. Example, the format looks like below,
 
