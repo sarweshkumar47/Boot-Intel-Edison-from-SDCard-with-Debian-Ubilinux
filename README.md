@@ -4,7 +4,7 @@
 
 
 
-Before following any of these steps, make sure you have booted **ubilinux or debian** os 
+Before following any of these steps, make sure you have booted **_ubilinux or debian_** os 
 (from [Emutexlabs](http://www.emutexlabs.com/)) on Intel Edison.
 
 ## Prepare External Storage (MicroSD Card)
