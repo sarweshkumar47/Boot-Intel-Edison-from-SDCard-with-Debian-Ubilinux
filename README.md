@@ -10,9 +10,9 @@ Before following any of these steps, make sure you have booted **_ubilinux or de
 ## Prepare External Storage (MicroSD Card)
 
 
-1. You need to have a SD card formatted with **ext4 file system** to store the root file system
-2. Download and unpack Debian image from [emutexlabs website](http://www.emutexlabs.com/)
-3. In the unpacked directory (with the "flashall.sh" script) run the following commands to
+* You need to have a SD card formatted with **ext4 file system** to store the root file system
+* Download and unpack Debian image from [emutexlabs website](http://www.emutexlabs.com/)
+* In the unpacked directory (with the "flashall.sh" script) run the following commands to
    prepare the SD card. These commands mount the edison-image-edison.ext4 rootfs image and 
    copy the contents onto the SD card
 
@@ -23,12 +23,12 @@ Before following any of these steps, make sure you have booted **_ubilinux or de
         cp -a Rootfs/* media/saru/eb361b92-c285-44a6-9f32-da393c879487
         sync
   	
-4. Eject the SD Card and now it is ready to boot
+* Eject the SD Card and now it is ready to boot
 
 
 ## Find out the SD card device name
 
-1.  On a running Edison board, plug your formatted SD card and get the device name.
+* On a running Edison board, plug your formatted SD card and get the device name.
 
         dmesg | tail -n 10
         
@@ -38,23 +38,23 @@ Before following any of these steps, make sure you have booted **_ubilinux or de
 </p>
   
   
-Here, the SD card device is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1"
+* Here, the SD card device is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1"
  
 
 ## Boot the board using SD card
 
 Debian system on Edison, does not mount the microsd card automatically. To mount sdcard at boot, modify the /etc/fstab system file in edison.
 
-1. Find the UUID for the sd card
+* Find the UUID for the sd card
 
          blkid
-         
+ 
    
 <p align="center">
 <img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s2.png" alt="blkid" style="width:304px;height:228px;">
 </p>
       
-2. add an entry for the partition to automount it at startup. Add file system, mount point, type, options, dump and pass information of sdcard partition to fstab file and save it. Example, the format looks like below,
+* Add an entry for the partition to automount it at startup. Add file system, mount point, type, options, dump and pass information of sdcard partition to fstab file and save it. Example, the format looks like below,
 
    #####/dev/sdcX      /media/sdcard    ext4    defaults    0     0
            
