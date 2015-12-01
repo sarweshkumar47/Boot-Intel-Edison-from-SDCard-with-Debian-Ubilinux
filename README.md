@@ -10,8 +10,8 @@ Before following any of these steps, make sure you have booted **_ubilinux or de
 ## Prepare External Storage (MicroSD Card)
 
 
-1. You need to have a SD card formatted with ext4 file system to store the root file system
-2. Download and unpack Debian image from emutexlabs website
+1. You need to have a SD card formatted with **ext4 file system** to store the root file system
+2. Download and unpack Debian image from [emutexlabs website](http://www.emutexlabs.com/)
 3. In the unpacked directory (with the "flashall.sh" script) run the following commands to
    prepare the SD card. These commands mount the edison-image-edison.ext4 rootfs image and 
    copy the contents onto the SD card
@@ -61,7 +61,7 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
    
    ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s4.png?raw=true)
    
-    To boot using the external device, you need to modify the U-Boot environment variable named "mmc-bootargs" with kernel boot arguments. We cannot modify U-Boot environment variables from edison linux console in debian os. It is possible only in U-Boot command prompt.
+    To boot using the external device, you need to modify the U-Boot environment variable named **"mmc-bootargs"** with kernel boot arguments. We cannot modify U-Boot environment variables from edison linux console in debian os. It is possible only in U-Boot command prompt.
 
 
 
