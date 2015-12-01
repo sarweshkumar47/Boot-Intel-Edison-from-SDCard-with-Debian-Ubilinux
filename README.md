@@ -61,9 +61,13 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
          reboot
    #####After reboot, debian os automatically mounts the sdcard.
    
-   ![image](https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s4.png?raw=true)
+
+<p align="center">
+<img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s4.png" alt="Mountain View" style="width:304px;height:228px;">
+</p>
    
-    To boot using the external device, you need to modify the U-Boot environment variable named **"mmc-bootargs"** with kernel boot arguments. We cannot modify U-Boot environment variables from edison linux console in debian os. It is possible only in U-Boot command prompt.
+   
+To boot using the external device, you need to modify the U-Boot environment variable named **"mmc-bootargs"** with kernel boot arguments. We cannot modify U-Boot environment variables from edison linux console in debian os. It is possible only in U-Boot command prompt.
 
 
 
