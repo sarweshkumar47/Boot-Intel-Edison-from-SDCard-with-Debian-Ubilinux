@@ -61,18 +61,15 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
          nano /etc/fstab
          #Add an entry for the partition
          UUID=eb361b92-c285-44a6-9f32-da393c879487    /media/sdcard    ext4    defaults    0 0
-
+         mkdir -p /media/sdcard/
+         reboot
 
 <p align="center">
 <img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s3.png" alt="blkid" style="width:304px;height:228px;">
 </p>
-
-      
-         mkdir -p /media/sdcard/
-         reboot
     
     
- After reboot, debian os automatically mounts the sdcard.
+After reboot, debian os automatically mounts the sdcard.
    
 
 <p align="center">
