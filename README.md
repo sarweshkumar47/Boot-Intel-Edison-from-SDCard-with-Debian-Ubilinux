@@ -38,7 +38,7 @@ Before following any of these steps, make sure you have booted **_ubilinux or de
 </p>
   
   
-* Here, the SD card device is “/dev/mmcblk1” and the partition we’ve created is "/dev/mmcblk1p1"
+* Here, the SD card device is **“/dev/mmcblk1”** and the partition we’ve created is **"/dev/mmcblk1p1"**
  
 
 ## Boot the board using SD card
@@ -77,7 +77,7 @@ After reboot, debian os automatically mounts the sdcard.
 </p>
    
    
-To boot using the external device, you need to modify the U-Boot environment variable named **"mmc-bootargs"** with kernel boot arguments. We cannot modify U-Boot environment variables from edison linux console in debian os. It is possible only in U-Boot command prompt.
+_To boot using the external device, you need to modify the U-Boot environment variable named **"mmc-bootargs"** with kernel boot arguments. We cannot modify U-Boot environment variables from edison linux console in debian os. It is possible only in U-Boot command prompt._
 
 
 
