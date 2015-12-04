@@ -85,8 +85,9 @@ _To boot using the external device, you need to modify the U-Boot environment va
 
 * To modify U-Boot env variables, u-boot and u-boot-tools packages are available in debian repository. The tools           fw_printenv/fw_setenv in the u-boot source tree normally work with MTD partitions but they don’t support MMC.
 
+-----------------------------------------------------------------------------------------------------------------
 
-* To modify u-boot env variables ,during the boot, on the serial console, when it prompts to press a key to stop    booting, press any key and then run the following commands in the U-Boot command prompt.
+To modify u-boot env variables ,during the boot, on the serial console, when it prompts to press a key to stop    booting, press any key and then run the following commands in the U-Boot command prompt.
    
 
 <p align="center">
