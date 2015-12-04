@@ -131,7 +131,7 @@ _To boot using the external device, you need to modify the U-Boot environment va
         > run do_boot_sdcard
 
 	
-## References 
+## Reference
 
  * [https://communities.intel.com/thread/61048](https://communities.intel.com/thread/61048)
 
