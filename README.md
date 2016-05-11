@@ -98,6 +98,8 @@ To modify u-boot env variables ,during the boot, on the serial console, when it 
   
       > setenv mmc-bootargs 'setenv bootargs root=${myrootfs} rootdelay=3 rootfstype=ext4 ${bootargs_console} ${bootargs_debug} systemd.unit=${bootargs_target}.target hardware_id=${hardware_id} g_multi.iSerialNumber=${serial#} g_multi.dev_addr=${usb0addr}'
 
+      > setenv myrootfs '/dev/mmcblk1p1'
+
       > setenv myrootfs_sdcard /dev/mmcblk1p1
 
       > setenv myrootfs_emmc PARTUUID=012b3303-34ac-284d-99b4-34e03a2335f4
@@ -105,6 +107,8 @@ To modify u-boot env variables ,during the boot, on the serial console, when it 
       > setenv do_boot_emmc 'setenv myrootfs ${myrootfs_emmc}; run do_boot'
 
       > setenv do_boot_sdcard 'setenv myrootfs ${myrootfs_sdcard}; run do_boot'
+
+      > setenv bootdelay 5
 
       > saveenv
 
@@ -127,9 +131,6 @@ To modify u-boot env variables ,during the boot, on the serial console, when it 
 
         > run do_boot_emmc
 
-* To boot from SD card by running the below command in the U-Boot command prompt:
-
-        > run do_boot_sdcard
 
 	
 ## Reference
