@@ -120,7 +120,7 @@ To modify u-boot env variables ,during the boot, on the serial console, when it 
 
    > saveenv
 
-   > run do _boot_sdcard
+   > run do_boot_sdcard
 ```
 
 <p align="center">
