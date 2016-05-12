@@ -16,13 +16,14 @@ Before following any of these steps, make sure you have booted **_ubilinux or de
    prepare the SD card. These commands mount the edison-image-edison.ext4 rootfs image and 
    copy the contents onto the SD card
 
-  	
-        sudo su
-        mkdir Rootfs
-        mount ./edison-image-edison.ext4 Rootfs
-        cp -a Rootfs/* media/saru/eb361b92-c285-44a6-9f32-da393c879487
-        sync
-  	
+```bash
+  sudo su
+  mkdir Rootfs
+  mount ./edison-image-edison.ext4 Rootfs
+  cp -a Rootfs/* media/saru/eb361b92-c285-44a6-9f32-da393c879487
+  sync
+```
+
 * Eject the SD Card and now it is ready to boot
 
 
@@ -30,7 +31,9 @@ Before following any of these steps, make sure you have booted **_ubilinux or de
 
 * On a running Edison board, plug your formatted SD card and get the device name.
 
-        dmesg | tail -n 10
+```bash
+  dmesg | tail -n 10
+```
         
   
 <p align="center">
@@ -47,7 +50,9 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
 
 * Find the UUID for the sd card
 
-         blkid
+```bash
+   blkid
+```
  
    
 <p align="center">
@@ -57,12 +62,14 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
 * Add an entry for the partition to automount it at startup. Add file system, mount point, type, options, dump and pass information of sdcard partition to fstab file and save it. Example, the format looks like below,
 
    #####/dev/sdcX      /media/sdcard    ext4    defaults    0     0
-           
-         nano /etc/fstab
-         #Add an entry for the partition
-         UUID=eb361b92-c285-44a6-9f32-da393c879487    /media/sdcard    ext4    defaults    0 0
-         mkdir -p /media/sdcard/
-         reboot
+         
+```bash  
+  nano /etc/fstab
+  #Add an entry for the partition
+  UUID=eb361b92-c285-44a6-9f32-da393c879487    /media/sdcard    ext4    defaults    0 0
+  mkdir -p /media/sdcard/
+  reboot
+```
 
 <p align="center">
 <img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s3.png" alt="blkid" style="width:304px;height:228px;">
@@ -74,7 +81,7 @@ After reboot, debian os automatically mounts the sdcard.
 
 <p align="center">
 <img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s4.png" alt="Mountain View" style="width:304px;height:228px;">
-</p>
+</p>BTRGBControl
    
    
 _To boot using the external device, you need to modify the U-Boot environment variable named **"mmc-bootargs"** with kernel boot arguments. We cannot modify U-Boot environment variables from edison linux console in debian os. It is possible only in U-Boot command prompt._
@@ -96,23 +103,25 @@ To modify u-boot env variables ,during the boot, on the serial console, when it 
   
   Run the following commands in boot command prompt
   
-      > setenv mmc-bootargs 'setenv bootargs root=${myrootfs} rootdelay=3 rootfstype=ext4 ${bootargs_console} ${bootargs_debug} systemd.unit=${bootargs_target}.target hardware_id=${hardware_id} g_multi.iSerialNumber=${serial#} g_multi.dev_addr=${usb0addr}'
+ ```bash
+   > setenv mmc-bootargs 'setenv bootargs root=${myrootfs} rootdelay=3 rootfstype=ext4 ${bootargs_console} ${bootargs_debug} systemd.unit=${bootargs_target}.target hardware_id=${hardware_id} g_multi.iSerialNumber=${serial#} g_multi.dev_addr=${usb0addr}'
 
-      > setenv myrootfs '/dev/mmcblk1p1'
+   > setenv myrootfs '/dev/mmcblk1p1'
 
-      > setenv myrootfs_sdcard /dev/mmcblk1p1
+   > setenv myrootfs_sdcard /dev/mmcblk1p1
 
-      > setenv myrootfs_emmc PARTUUID=012b3303-34ac-284d-99b4-34e03a2335f4
+   > setenv myrootfs_emmc PARTUUID=012b3303-34ac-284d-99b4-34e03a2335f4
 
-      > setenv do_boot_emmc 'setenv myrootfs ${myrootfs_emmc}; run do_boot'
+   > setenv do_boot_emmc 'setenv myrootfs ${myrootfs_emmc}; run do_boot'
 
-      > setenv do_boot_sdcard 'setenv myrootfs ${myrootfs_sdcard}; run do_boot'
+   > setenv do_boot_sdcard 'setenv myrootfs ${myrootfs_sdcard}; run do_boot'
 
-      > setenv bootdelay 5
+   > setenv bootdelay 5
 
-      > saveenv
+   > saveenv
 
-      > run do _boot_sdcard
+   > run do _boot_sdcard
+```
 
 <p align="center">
   <img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s6.png" alt="Mountain View" style="width:304px;height:228px;">
@@ -122,14 +131,16 @@ To modify u-boot env variables ,during the boot, on the serial console, when it 
 ####After boot, verify that you are using rootfs stored on your external device.
 
 <p align="center">
-  <img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s7.png" alt="Mountain View" style="width:304px;height:228px;">
+  <img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s7.png" alt="MountainBTRGBControl View" style="width:304px;height:228px;">
 </p>
 
 ## Note: 
 
 * If you want to switch to eMMC just occasionally, during the boot, on the serial console, when it prompts to press a key to stop booting, press any key and then run the below command in the U-Boot command prompt that appears:
 
-        > run do_boot_emmc
+ ```bash
+   > run do_boot_emmc
+ ```
 
 
 	
