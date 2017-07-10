@@ -61,7 +61,7 @@ Debian system on Edison, does not mount the microsd card automatically. To mount
       
 * Add an entry for the partition to automount it at startup. Add file system, mount point, type, options, dump and pass information of sdcard partition to fstab file and save it. Example, the format looks like below,
 
-   #####/dev/sdcX      /media/sdcard    ext4    defaults    0     0
+   ##### /dev/sdcX      /media/sdcard    ext4    defaults    0     0
          
 ```bash  
   nano /etc/fstab
@@ -128,7 +128,7 @@ To modify u-boot env variables ,during the boot, on the serial console, when it 
 </p>
 
 
-####After boot, verify that you are using rootfs stored on your external device.
+#### After boot, verify that you are using rootfs stored on your external device.
 
 <p align="center">
   <img src="https://github.com/sarweshkumar47/Boot-Intel-Edison-from-SDCard-with-Debian-Ubilinux/blob/master/Screenshots/s7.png" alt="MountainBTRGBControl View" style="width:304px;height:228px;">
